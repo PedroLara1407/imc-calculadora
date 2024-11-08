@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Índice de Massa Corporal</title>
+</head>
+
+<body>
+<header>
+
+    <nav>
+        <ul>
+            <li><a href="#textoex">Texto explicativo</a></li> 
+            <li><a href="#calc">Calculadora IMC</a></li> 
+            <li><a href="#guia">Guia de IMC</a></li> 
+        </ul>
+    </nav> 
+    <h1 id="textoex">O Índice de Massa Corporal</h1> 
+</header>
+    <p>
+        IMC é a sigla para Índice de Massa Corpórea, parâmetro adotado pela Organização Mundial de Saúde para calcular o
+        peso ideal de cada pessoa. O índice é calculado da seguinte maneira: divide-se o peso do paciente pela sua
+        altura elevada ao quadrado. Diz-se que o indivíduo tem peso normal quando o resultado do IMC está entre 18,5 e
+        24,9. Quer descobrir seu IMC? Insira seu peso e sua altura nos campos abaixo e compare com os índices da tabela.
+        Importante: siga os exemplos e use pontos como separadores.
+        (Importante: O IMC é uma indicação geral e pode não ser 100% preciso para todos, especialmente para quem tem
+        grande massa muscular.)
+    </p>
+
+
+    <label for="altura" id="calc">Altura:</label>
+    <input type="number" name="altura" id="altura">
+
+    <label for="peso"> Peso (KG): </label>
+    <input type="number" name="peso" id="peso">
+
+    <button onclick="calcImc()"> Calcular IMC </button>
+
+    <p>Seu índice de massa corporal é: <span id="resultado"></span></p>
+
+    <table>
+        <caption id="guia"> Guia para ser seguido baseado nos resultados de Índice de massa corporal (IMC)</caption>
+        <!-- usado para descrever uma tabela  -->
+
+        <thead>
+        <tbody>
+
+            <tr>
+                <th>IMC</th>
+                <th>Classificação</th>
+                <th><b>Obesidade</b>(grau)</th>
+            </tr>
+
+
+            <tr>
+                <td>Menor que 18,5</td>
+                <td>Magreza </td>
+                <td>0</td>
+            </tr>
+
+
+            <tr>
+                <td>Entre 18,5 e 24,9</td>
+                <td>Normal</td>
+                <td>0</td>
+            </tr>
+
+            <tr>
+                <td>Entre 25,0 e 29,9</td>
+                <td>Sobrepeso</td>
+                <td>I</td>
+            </tr>
+
+            <tr>
+                <td>Entre 30,0 e 39,9</td>
+                <td>Obesidade</td>
+                <td>II</td>
+            </tr>
+
+            <tr>
+                <td>Maior que 40,0</td>
+                <td>Obesidade Grave</td>
+                <td>III</td>
+            </tr>
+        </tbody>
+        </thead>
+
+
+
+
+
+        <script>
+            function calcImc() {
+                const altura = document.getElementById("altura").value;
+                const peso = document.getElementById("peso").value;
+                const resultado = peso / (altura ** 2);
+
+                document.getElementById("resultado").textContent = resultado.toFixed(2);
+
+            }
+        </script> 
+
+
+
+<footer>
+    &copy; | direitos de criação reservados a Pedro Lara, fonte da pesquisa <a href="https://www.programasaudefacil.com.br/calculadora-de-imc">programasaudefacil</a>
+</footer>
+
+</body>
+
+</html>
